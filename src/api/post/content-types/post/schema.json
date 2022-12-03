@@ -4,21 +4,37 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post"
+    "displayName": "Post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
       "type": "string"
     },
-    "Article": {
-      "type": "text"
+    "uuid": {
+      "type": "string",
+      "unique": true
     },
-    "Categories": {
-      "type": "json"
+    "content": {
+      "type": "richtext"
+    },
+    "cover": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
