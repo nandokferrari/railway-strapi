@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "people",
+  "info": {
+    "singularName": "person",
+    "pluralName": "people",
+    "displayName": "People",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "biography": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isTeacher": {
+      "type": "boolean"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "week_day": {
+      "type": "string"
+    },
+    "time_from": {
+      "type": "string"
+    },
+    "time_to": {
+      "type": "string"
+    },
+    "class_cost": {
+      "type": "string"
+    }
+  }
+}
