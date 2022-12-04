@@ -63,8 +63,24 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "test": {
-      "type": "string"
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "author"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "biography": {
+      "type": "text"
     }
   }
 }
