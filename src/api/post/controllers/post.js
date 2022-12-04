@@ -10,15 +10,19 @@ module.exports = createCoreController("api::post.post", ({ strapi }) => ({
   async find(ctx) {
     const entity = await strapi.service("api::post.post").find(ctx);
     const results = [...entity.results];
+    const shouldReplace = process.env.STRAPI_URL === "develop";
     const absolutPathed = results.map((item) => {
-      return {
+      let changedObject = {
         ...item,
         content: item.content.replace(
           "/uploads",
-          `${strapi.config.get("server.url")}/uploads`
+          `${process.env.STRAPI_URL}/uploads`
         ),
       };
+
+      return shouldReplace ? changedObject : item;
     });
+
     entity.results = absolutPathed;
     const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
     return this.transformResponse(sanitizedEntity);
