@@ -1,11 +1,5 @@
-// import { nanoid } from "nanoid";
-
 const { nanoid } = require("nanoid");
 const { default: slugify } = require("slugify");
-
-// const { default: slugify } = require("slugify");
-
-// const { nanoid } = require("nanoid");
 
 module.exports = {
   beforeCreate(event) {
